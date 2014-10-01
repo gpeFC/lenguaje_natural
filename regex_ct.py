@@ -5,19 +5,37 @@ entrada_correos = ["aclopez@estudiants.urv.cat",
 				  "soy_spam at upemor  dot edu", 
 				  """<script type="text/javascript">obfuscate('gmail.com','aclopez')</script>"""]
 
-entrada_telefonos = ["+52-777-563-1295", "(777) 563-1295", "(+52)777-563-1295", """<a href="contact.html">TEL</a> +52&thinsp;777&thinsp;563&thinsp;1295"""]
+entrada_telefonos = ["+52-777-563-1295", 
+					"(777) 563-1295", 
+					"(+52)777-563-1295", 
+					"""<a href="contact.html">TEL</a> +52&thinsp;777&thinsp;563&thinsp;1295"""]
 
-patron = r"[a-zA-Z0-9(\<script)]+[\.{1}[a-zA-Z0-9]+]*[@(\(at\))at]*"
+patron_telefono = r".*\d{3}.*\d{3}.*\d{4}"
+patron_correo = r"[a-zA-Z0-9(\<script)]+[\.{1}[a-zA-Z0-9]+]*[@(\(at\))at]*"
 
+patron = re.compile(r"\d{3}\d{3}\d{4}", re.I)
 salida_correos = []
-salida_telefonos = []
 
+print "Telefonos/Entrada:"
+for telefono in entrada_telefonos: print "\t", telefono
 print
+print "Telefonos/Salida:"
+for cadena in entrada_telefonos:
+	lista =  re.findall(r"\d{3,4}", cadena)
+	telefono = ""
+	for i in range(len(lista)):
+		if i < len(lista)-1:
+			telefono += lista[i]
+			telefono += "-"
+		else:
+			telefono += lista[i]
+	print "\t", telefono
+
+print "\n"
 print "Correos/Entrada:"
 for correo in entrada_correos: print "\t", correo
-print
 for cadena in entrada_correos:
-	if re.match(patron, cadena):
+	if re.match(patron_correo, cadena):
 		salida_correos.append(cadena)
 print 
 print "Correos/Salida:"
@@ -54,4 +72,4 @@ for cadena in salida_correos:
 			else:
 				nueva += token
 		print "\t", nueva
-print 
+
