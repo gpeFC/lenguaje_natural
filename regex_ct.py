@@ -1,3 +1,9 @@
+"""
+Emanuel GP
+30/10/2014
+FC UAEM
+"""
+
 import re
 
 entrada_correos = ["aclopez@estudiants.urv.cat", 
