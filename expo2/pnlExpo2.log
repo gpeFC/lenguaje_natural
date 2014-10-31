@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.10)  31 OCT 2014 14:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.10)  31 OCT 2014 16:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -697,6 +697,12 @@ LaTeX Warning: Label `fig:ejemplo' multiply defined.
 
 LaTeX Warning: Label `fig:ejemplo' multiply defined.
 
+
+LaTeX Warning: Label `fig:ejemplo' multiply defined.
+
+
+LaTeX Warning: Label `fig:ejemplo' multiply defined.
+
 )
 \openout1 = `pnlExpo2.aux'.
 
@@ -907,15 +913,11 @@ Overfull \hbox (127.02385pt too wide) has occurred while \output is active
 
 [2
 
-] <sentiment1.jpg, id=175, 413.545pt x 292.09125pt>
+] <sentiment1.jpg, id=164, 413.545pt x 292.09125pt>
 File: sentiment1.jpg Graphic file (type jpg)
  <use sentiment1.jpg>
 Package pdftex.def Info: sentiment1.jpg used on input line 46.
 (pdftex.def)             Requested size: 153.64493pt x 108.5222pt.
-
-Overfull \vbox (4.81372pt too high) detected at line 46
- []
-
 
 Overfull \hbox (16.82144pt too wide) has occurred while \output is active
   []\OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS[] 
@@ -1036,7 +1038,7 @@ Overfull \hbox (127.02385pt too wide) has occurred while \output is active
 
 [12
 
-] <arbol1.jpg, id=516, 481.8pt x 240.9pt>
+] <arbol1.jpg, id=486, 481.8pt x 240.9pt>
 File: arbol1.jpg Graphic file (type jpg)
  <use arbol1.jpg>
 Package pdftex.def Info: arbol1.jpg used on input line 139.
@@ -1070,7 +1072,7 @@ Overfull \hbox (127.02385pt too wide) has occurred while \output is active
 
 [14
 
-] <tabla1.jpg, id=590, 330.23375pt x 189.70876pt>
+] <tabla1.jpg, id=557, 330.23375pt x 189.70876pt>
 File: tabla1.jpg Graphic file (type jpg)
  <use tabla1.jpg>
 Package pdftex.def Info: tabla1.jpg used on input line 157.
@@ -1142,7 +1144,7 @@ Overfull \hbox (127.02385pt too wide) has occurred while \output is active
 
 ]
 Overfull \hbox (16.82144pt too wide) has occurred while \output is active
-  []\OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS[] 
+  \OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS 
  []
 
 
@@ -1152,7 +1154,157 @@ Overfull \hbox (127.02385pt too wide) has occurred while \output is active
 
 [20
 
- </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
+]
+Overfull \hbox (16.82144pt too wide) has occurred while \output is active
+  \OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS 
+ []
+
+
+Overfull \hbox (127.02385pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[21
+
+]
+Overfull \hbox (16.82144pt too wide) has occurred while \output is active
+  \OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS 
+ []
+
+
+Overfull \hbox (127.02385pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[22
+
+]
+Overfull \hbox (16.82144pt too wide) has occurred while \output is active
+  \OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS 
+ []
+
+
+Overfull \hbox (127.02385pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[23
+
+]
+Overfull \hbox (16.82144pt too wide) has occurred while \output is active
+  \OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS 
+ []
+
+
+Overfull \hbox (127.02385pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[24
+
+]
+Overfull \hbox (16.82144pt too wide) has occurred while \output is active
+  \OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS 
+ []
+
+
+Overfull \hbox (127.02385pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[25
+
+]
+Overfull \hbox (16.82144pt too wide) has occurred while \output is active
+  []\OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS[] 
+ []
+
+
+Overfull \hbox (127.02385pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[26
+
+]
+Overfull \hbox (16.82144pt too wide) has occurred while \output is active
+  []\OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS[] 
+ []
+
+
+Overfull \hbox (127.02385pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[27
+
+]
+Overfull \hbox (16.82144pt too wide) has occurred while \output is active
+  []\OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS[] 
+ []
+
+
+Overfull \hbox (127.02385pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[28
+
+] <tabla2.jpg, id=1043, 476.78125pt x 219.82124pt>
+File: tabla2.jpg Graphic file (type jpg)
+ <use tabla2.jpg>
+Package pdftex.def Info: tabla2.jpg used on input line 289.
+(pdftex.def)             Requested size: 153.64493pt x 70.8373pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig:ejemplo})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.289 }
+       
+LaTeX Font Info:    Try loading font information for U+msa on input line 289.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 289.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (16.82144pt too wide) has occurred while \output is active
+  []\OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS[] 
+ []
+
+
+Overfull \hbox (127.02385pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[29
+
+ <./tabla2.jpg>] <tabla3.jpg, id=1077, 448.67625pt x 151.56625pt>
+File: tabla3.jpg Graphic file (type jpg)
+
+<use tabla3.jpg>
+Package pdftex.def Info: tabla3.jpg used on input line 301.
+(pdftex.def)             Requested size: 153.64493pt x 51.90187pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig:ejemplo})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.301 }
+       
+Overfull \hbox (16.82144pt too wide) has occurred while \output is active
+  []\OT1/cmss/bx/n/6 CLASIFICACI[]ON DE OPINIONES BASADA EN DEPENDENCIAS[] 
+ []
+
+
+Overfull \hbox (127.02385pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[30
+
+ <./tabla3.jpg>]
 \tf@nav=\write6
 \openout6 = `pnlExpo2.nav'.
 
@@ -1162,14 +1314,13 @@ Overfull \hbox (127.02385pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `pnlExpo2.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 219.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 219.
-
-(./pnlExpo2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 219.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 219.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 303.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 303.
+ (./pnlExpo2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 303.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 303.
 Package rerunfilecheck Info: File `pnlExpo2.out' has not changed.
-(rerunfilecheck)             Checksum: 2962683470D4BD366D753D96866BC791;814.
+(rerunfilecheck)             Checksum: 1F96B3E67582D007E94FDFF5A163FDC5;698.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1178,24 +1329,25 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 219.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 303.
  ) 
 Here is how much of TeX's memory you used:
- 15911 strings out of 494985
- 297300 string characters out of 6180355
- 372406 words of memory out of 5000000
- 18692 multiletter control sequences out of 15000+600000
- 6934 words of font info for 25 fonts, out of 8000000 for 9000
+ 15992 strings out of 494985
+ 298215 string characters out of 6180355
+ 371350 words of memory out of 5000000
+ 18736 multiletter control sequences out of 15000+600000
+ 11740 words of font info for 43 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 49i,20n,72p,558b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on pnlExpo2.pdf (20 pages, 164556 bytes).
+ 49i,20n,72p,618b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
+Output written on pnlExpo2.pdf (30 pages, 214658 bytes).
 PDF statistics:
- 842 PDF objects out of 1000 (max. 8388607)
- 781 compressed objects within 8 object streams
- 58 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1148 PDF objects out of 1200 (max. 8388607)
+ 1076 compressed objects within 11 object streams
+ 75 named destinations out of 1000 (max. 500000)
+ 190 words of extra memory for PDF output out of 10000 (max. 10000000)
 

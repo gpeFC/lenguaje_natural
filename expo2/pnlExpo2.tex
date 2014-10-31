@@ -195,25 +195,109 @@ Los nexos adversativos contraponene hechos expresados en dos oraciones. En MO es
 Un \'arbol de dependencias permite identificar con precisi\'on la oraci\'on subordinada y la subordinante.
 }
 
-
-\subsection{Tratamiento de la Negaci\'on}
-\subsubsection{Identificaci\'on del alcance de la negaci\'on}
-\subsubsection{Modificaci\'on de la polaridad}
-\section{RESULTADOS EXPERIMENTALES}
-\subsection{Implementaci\'on}
-\subsection{Evaluaci\'on}
-\section{CONCLUSIONES Y TRABAJO FUTURO}
-
-\section{BIBLIOGRAF\'IA}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{Bibliograf\'ia}
-\begin{thebibliography}{99}
-\bibitem{}Desarrollo de un Sistema de Recuperaci\'on de Informaci\'on para Publicaciones
-Cient\'ificas del \'Area de Ciencias de la Computaci\'on. Kuna, H., Rey, M., Martini, E., Solonezen, L., Podkowa. Revista Latinoamericana de Ingenier\'ia de Software 2014.
-\bibitem{}THE AR-INDEX: COMPLEMENTING THE H-INDEX. Bihui Jin. National Library of Science CAS, Beijing, 100080, China. 2005-2007.
-\bibitem{}http://www.core.edu.au/
-\end{thebibliography}
+\frametitle{}
+El corpus Ancora representa sint\'acticamente este tipo de oraciones de forma diferente seg\'un el nexo concreto, se opto por hacer enfoque en los nexos m\'as relevantes que Ancora representa de manera uniforme; siendo estos divididos en dos grupos:
+\begin{itemize}
+	\item Restrictivos: reducen la OS de la oraci\'on principal. Destaca la conjunci\'on "pero".
+	\item Excluyentes: eliminan por completo lo expresado en la primera oraci\'on; "sino".
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Seg\'un la clase del nexo, se pondera el sentimiento acumulado, tanto en la oraci\'on subordinante y la subordinada, de forma distinta.\\
+Para homogenizar la estructura sint\'actica de otras subordinadas adversativas y simplificar la ponderaci\'on de estas oraciones, se opto por reestructurarlas en el \'arbol de dependencias. Se cre\'o un nuevo tipo de dependencia, art\_rel\_adversative, para identificar sint\'acticamente el inicio de una cl\'ausula de este tipo.
+}
+
+
+\subsection{Tratamiento de la Negaci\'on}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Muchos t\'erminos o expresiones permiten negar una opini\'on, la distinci\'on de un negador y un intensificador decrementador suele ser difusa. Se restringio el tratamiento de esto a los t\'erminos "no", "nunca" y "sin". Expresiones negadoras como "lo menos" o "en absoluto" fuer\'on tratadas como intensificadores, se uso la informaci\'on sem\'antica de SODictionariesV1.11Spa para este tipo de locuciones.\\
+Para resolver el sentimiento de una oraci\'on con t\'erminos negativos se necesitan dos pasos:
+\begin{itemize}
+	\item Identificar el alcance de la negaci\'on.
+	\item Modificar la polaridad del fragmento de la oraci\'on correspondiente.
+\end{itemize}
+}
+
+
+\subsubsection{Identificaci\'on del alcance de la negaci\'on}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+En primer lugar se establece un alcance candidato, formado por el padre del negador y sus hermanos, despu\'es se corrige ese alcance aplicando las siguientes reglas:
+\begin{enumerate}
+\item Regla del padre subjetivo: si el padre del negador aparece en los diccionarios sem\'antico, entonces solo \'el constituye el alcance corregido de la negaci\'on.
+\item Regla del atributo o complementeo directo: si alguno de los hermanos desempe\~na una de estas funciones sint\'acticas, entonce dicho hermano forma parte del alcance de la negaci\'on.
+\item Regla del complemento circunstancial m\'as cercano: si alguna rama al mismo nivel del negador actua como complemento circunstancial, entonces dicha rama forma el alcance corregido. En caso de varios complementos circunstanciales, solo se incorpora el m\'as cercano f\'isicamente al negador.
+\end{enumerate}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Si ninguna de las reglas se cumple, entonces se asume el alcance candidato(salvo el nodo padre) como el corregido.
+}
+
+\subsubsection{Modificaci\'on de la polaridad}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Una vez obtenido el alcance corregido de la negaci\'on, se extrae su polaridad y despu\'es el valor obtenido es modificado en una cantidad preestablecida de signo contrario.
+}
+
+
+\section{RESULTADOS EXPERIMENTALES}
+\subsection{Implementaci\'on}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Se realizo la implementaci\'on en Python usando el toolkit NLTK, para la etiquetaci\'on se aplico el algoritmo de Brill utilizando el corpus Ancora para el entrenamiento(90\% del corpus para entrenar y el 10\% restante para evaluar).\\ Para mejorar el rendimiento practico del etiquetador para textos de la web, el fragmento del corpus para el aprendizaje fue ampliado para que cada oraci\'on tuviese un equivalente si acentos gr\'aficos. El an\'alisis sint\'actico de dependencias se realizo con el algoritmo Nivre arc-eager(Nivre, 2008) generado con Malt-Parser mediante AA a partir del corpus Ancora.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Un problema a tener en cuenta, fue solventar la mayor importancia que suelen tener las oraciones finales de una opini\'on. Para modelar esto, se opto por aumentar 75\% la OS de las 3 \'ultimas  frases de una cr\'itica.\\
+Otro problema, de la tendencia positiva del lenguaje, es expresar una opini\'on negativa usando negaciones de t\'erminos positivos, "no barato", "no bueno", para compensar esta desviaci\'on muchas aproximaciones l\'exicas incrementan la OS de los t\'erminos negativos. Se mejoro la presici\'on del sistema aumentando la dispenrsi\'on de la OS un 20\%, haciendo que las polaridades sean entre -6 y 6.
+}
+
+
+\subsection{Evaluaci\'on}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Para la evaluaci\'on se empleo un corpus formado por 400 documentos; SFU Spanish Review Corpus(Brooke, Tofiloski, Taboada, 2009). Contiene rese\~nas de productos y servicios de ocho categor\'ias: lavadoras, hoteles, pel\'iculas, coches, ordenadores, libros, m\'usica y moviles.\\
+Cada categor\'ia dispone de 50 documentos, 25 expresan una opini\'on positiva y 25 una negativa. Se procesa cada texto y se obtiene la OS, si es mayr a 0 es positiva y es negativa en caso contrario.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Las construcciones ling\"uisticas tratadas han mejorado el rendimiento, el incremento obtenido al incorporar la negaci\'on es muy significativo.
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\textwidth]{tabla2.jpg}
+  \label{fig:ejemplo}
+\end{figure}
+Se realizar\'on pruebas chi-cuadrado(p $<$ 0.01), comparando con las polaridades correctas.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Haber utilizado el mismo corpus y los mismos diccionarios sem\'anticos, permite comparar esta alternativa sint\'actica con la soluci\'on l\'exica.\\
+Hubo un incremento en el rendimiento respecto a "The Spanish SO-CA", tambi\'en se creo un clasificador SVM, basado en AA, usando WEKA.
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\textwidth]{tabla3.jpg}
+  \label{fig:ejemplo}
+\end{figure}
 }
 
 \end{document}
