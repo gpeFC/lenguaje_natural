@@ -48,15 +48,154 @@
 \frame{
 \transdissolve[duration=0.2]
 \frametitle{}
-Debido a las ventajas que presenta toda esa informaci\'on y la complejidad que conlleva su an\'alisis es necesario la b\'usqueda de soluciones eficientes capaces de monitorizar este flujo de informaci\'on, lo cual ha contribuido al estudio y desarrollo de la miner\'ia de opiniones(MO). La MO de enfoca en el tratamiento autom\'atico de informaci\'on con opini\'on, lo que permite extraer la polaridad de un texto.
+Debido a las ventajas que presenta toda esa informaci\'on y la complejidad que conlleva su an\'alisis es necesario la b\'usqueda de soluciones eficientes capaces de monitorizar este flujo de informaci\'on. La miner\'ia de opini\'on(MO) se enfoca en el tratamiento autom\'atico de informaci\'on con opini\'on, lo que permite extraer la polaridad(positiva, negativa, neutra, mixta) de un texto.
 }
 
 
 \section{ESTADO DEL ARTE}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Polaridad en textos}
+La clasificaci\'on de la polaridad en textos es un problema de gran relevancia en la MO, este ha sido abordado desde dos enfoques:
+\begin{itemize}
+	\item Concebir esta tarea como un proceso gen\'erico de clasificaci\'on, y a partir de un conjunto de datos de entrenamiento, donde los textos son anotados con su respectiva polaridad, se construye un clasificador mediante aprendizaje autom\'atico(AA).
+	\item Apoyarse en la orientaci\'on sem\'antica(OS) de las palabras, cada t\'ermino que expresa opini\'on es anotado con un valor que representa su polaridad.
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Sistemas de MO}
+La mayor\'ia de los sistemas de MO existentes se enfocan en tratar \'unicamente textos en ingles. Para textos en espa\~nol el, quiz\'as, sistema m\'as relevante es "The Spanish SO Calculator", desarrollado en la universidad Simon Fraser de Canad\'a.
+}
+
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Spanish SO CA}
+\begin{itemize}
+	\item Resuelve la OS almacenada a nivel individual en: adjetivos, sustantivos, verbos y adverbios.
+	\item Trata modificadores de la polaridad, como la negaci\'on o intensificadores("muy", "poco", "bastante").
+	\item Detecta y excluye el sentimiento reflejado en el contenido no f\'actico del texto(expresiones condicionales o subjuntivas.)\\
+	La forma m\'as com\'un de tratar estas construcciones ling\"uisticas es a nivel l\'exico, y "The Spanish SO CA" no es la excepci\'on.
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Negaci\'on}
+Respecto a la negaci\'on tenemos lo siguiente: 
+\begin{itemize}
+	\item Taboada, 2011: utiliza informaci\'on morfol\'ogica para identificar el alcance dela negaci\'on.
+	\item Yang, 2008: considera el alcance de la negaci\'on como los t\'erminos a la derecha de la negaci\'on.
+	\item Fern\'andez Anta, 2012: se emplea una heur\'istica que asume que los tres elementos a continuaci\'on de una negaci\'on son los que deben cambiar su polaridad.
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Intensificaci\'on}
+Para los intensificadores tenemos: 
+\begin{itemize}
+	\item Fern\'andez Anta, 2012: considera de nuevo que los tres t\'erminos a la derecha son los que deben variar su polaridad.
+	\item Taboada, 2011: adem\'as de los intensificadores propiamente dichos, trata como tales aspectos del discurso como la conjunci\'on "pero" o las may\'usculas.
+\end{itemize}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+La propuesta utilizada se basa en obtener la estructura sint\'actica del texto para tratar las construcciones ling\"uisticas e identificar los elementos de la frase que est\'an implicados en ellas.\\ Trabajos anteriores(Jiu, yuMeng, 2009) han mostrado los beneficios de utilizar la estructura sint\'actica de la frase en textos con ocurrencias de t\'erminos negativos. 
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Otro problema que enfrentan los sitemas de MO es la calidad ortogr\'afica de los textos. Si estos provienen de la web, se debe tener en cuenta que a menudo sus autores omiten acentos, letras, vocablos, etc., o utilizan abreviaturas no reconocidas y oraciones agram\'aticales.\\ La soluci\'on m\'as utilizada es usar patrones heur\'isticos para adaptar el texto.
+}
+
+
 \section{CLASIFICACI\'ON DE OPINIONES BASADA EN DEPENDENCIAS}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+En contraste a las propuestas l\'exicas dominantes, se propone utilizar la estructura sint\'actica de la frase para obtener la OS de un texto. Inicialmente se debe hacer un preprocesamiento de los textos que contemple los siguientes aspectos:
+\begin{itemize}
+	\item Unificaci\'on de expresiones compuestas que actuan como una sola unidad de significado("a menos que").
+	\item Normalizaci\'on de los signos de puntuaci\'on.
+\end{itemize}
+Posteriormente se debe segmentar el texto en oraciones y tokenizar cada una, para despu\'es hacer el etiquetado morfosint\'actico de cada palabra del texto.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+El siguiente paso es realizar el an\'alisis sint\'actico de dependencias para identificar las relaciones binarias "padre/dependiente" entre los t\'erminos de una oraci\'on. Se incluye un elemento inicial(ROOT) para facilitar las definiciones formales e implementaciones. Cada vinculo binario constituye una dependencia, que se anota con la funci\'on sint\'actica que relaciona los dos t\'erminos(\'Arbol de dependencias). Se utilizo el corpus Ancora(Taul\'e, Mart\'i, Recasens, 2008) como referencia para definir las relaciones de dependencia.
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\textwidth]{arbol1.jpg}
+  \label{fig:ejemplo}
+\end{figure}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Finalmente para realizar el an\'alisis sem\'antico, se utiliza SODcitionariesV1.11Spa(Brooke, Tofiloski, Taboada, 2009), un conjunto de diccionarios de polaridad para adjetivos, sustantivos, verbos, adverbios e intensificadores. Cada t\'ermino tiene asociado un valor entre -5 y 5, siendo -5 lo m\'as negativo y 5 lo m\'as positivo. El valor asignado a cada palabra corresponde con una OS gen\'erica, independientemente del dominio o contexto donde se use.
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Ej: r\'apido(adj):= 2, recomendar(verb):= 2
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\textwidth]{tabla1.jpg}
+  \label{fig:ejemplo}
+\end{figure}
+Los valores numericos asociados a los intensificadores tiene un significado distinto, representan el porcentaje(positivo o negativo) por el que modifican el sentimiento de la expresi\'on a la que afectan.
+}
+
+
 \subsection{Propuesta Base}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Se determina la polaridad de un texto a partir de la combinaci\'on de la OS de sustantivos, adjetivos, verbos, y adverbios, sin considerar la estructura sint\'actica del texto(construcciones ling\"uisticas complejas).
+}
+
+
 \subsection{Tratamiento de la Intensificaci\'on}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Los intensificadores son t\'erminos o expresiones que modifican la polaridad de ciertas palabras. Podemos clasificarlos en dos tipos:
+\begin{itemize}
+	\item Amplificadores: permiten aumentar la polaridad; ("muy", "bastante").
+	\item Decrementadores: permiten disminuir la polaridad; ("poco", "en absoluto").
+\end{itemize}
+Para modelar esta construcci\'on, se asocia a cada intensificador un factor de ponderaci\'on. Se utiliza el \'arbol de dependencias para determinar la parte de la frase que se ve afectada por tal modificaci\'on, considerando las dependencias anotadas en Ancora. 
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Si hay varios intensificadores presentes, se combinan sus porcentajes de intensificaci\'on antes de que actuen sobre el t\'ermino afectado. \\
+Ej: "muy":= 0.25, "en absoluto":= -1 \\
+"muy r\'apido"|OS: 2*(1+0.25) = 2.5\\
+"en absoluto muy r\'apido"|OS: 2*(1+(-1+0.25)) = 0.5
+}
+
+
 \subsection{Tratamiento de las oraciones adversativas}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Los nexos adversativos contraponene hechos expresados en dos oraciones. En MO este tipo de frases se emplean para restringir o excluir opiniones, que puede ser considerado como un caso especial de intensificaci\'on.\\
+Un \'arbol de dependencias permite identificar con precisi\'on la oraci\'on subordinada y la subordinante.
+}
+
+
 \subsection{Tratamiento de la Negaci\'on}
 \subsubsection{Identificaci\'on del alcance de la negaci\'on}
 \subsubsection{Modificaci\'on de la polaridad}

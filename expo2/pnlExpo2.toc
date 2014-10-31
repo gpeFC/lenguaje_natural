@@ -1,15 +1,15 @@
 \beamer@endinputifotherversion {3.24pt}
 \beamer@sectionintoc {2}{INTRODUCCI\'ON}{3}{0}{1}
 \beamer@sectionintoc {3}{ESTADO DEL ARTE}{5}{0}{2}
-\beamer@sectionintoc {4}{CLASIFICACI\'ON DE OPINIONES BASADA EN DEPENDENCIAS}{5}{0}{3}
-\beamer@subsectionintoc {4}{1}{Propuesta Base}{5}{0}{3}
-\beamer@subsectionintoc {4}{2}{Tratamiento de la Intensificaci\'on}{5}{0}{3}
-\beamer@subsectionintoc {4}{3}{Tratamiento de las oraciones adversativas}{5}{0}{3}
-\beamer@subsectionintoc {4}{4}{Tratamiento de la Negaci\'on}{5}{0}{3}
-\beamer@subsubsectionintoc {4}{4}{1}{Identificaci\'on del alcance de la negaci\'on}{5}{0}{3}
-\beamer@subsubsectionintoc {4}{4}{2}{Modificaci\'on de la polaridad}{5}{0}{3}
-\beamer@sectionintoc {5}{RESULTADOS EXPERIMENTALES}{5}{0}{4}
-\beamer@subsectionintoc {5}{1}{Implementaci\'on}{5}{0}{4}
-\beamer@subsectionintoc {5}{2}{Evaluaci\'on}{5}{0}{4}
-\beamer@sectionintoc {6}{CONCLUSIONES Y TRABAJO FUTURO}{5}{0}{5}
-\beamer@sectionintoc {7}{BIBLIOGRAF\'IA}{5}{0}{6}
+\beamer@sectionintoc {4}{CLASIFICACI\'ON DE OPINIONES BASADA EN DEPENDENCIAS}{12}{0}{3}
+\beamer@subsectionintoc {4}{1}{Propuesta Base}{16}{0}{3}
+\beamer@subsectionintoc {4}{2}{Tratamiento de la Intensificaci\'on}{17}{0}{3}
+\beamer@subsectionintoc {4}{3}{Tratamiento de las oraciones adversativas}{19}{0}{3}
+\beamer@subsectionintoc {4}{4}{Tratamiento de la Negaci\'on}{20}{0}{3}
+\beamer@subsubsectionintoc {4}{4}{1}{Identificaci\'on del alcance de la negaci\'on}{20}{0}{3}
+\beamer@subsubsectionintoc {4}{4}{2}{Modificaci\'on de la polaridad}{20}{0}{3}
+\beamer@sectionintoc {5}{RESULTADOS EXPERIMENTALES}{20}{0}{4}
+\beamer@subsectionintoc {5}{1}{Implementaci\'on}{20}{0}{4}
+\beamer@subsectionintoc {5}{2}{Evaluaci\'on}{20}{0}{4}
+\beamer@sectionintoc {6}{CONCLUSIONES Y TRABAJO FUTURO}{20}{0}{5}
+\beamer@sectionintoc {7}{BIBLIOGRAF\'IA}{20}{0}{6}
