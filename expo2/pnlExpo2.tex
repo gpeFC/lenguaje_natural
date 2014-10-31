@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 			Facultad de Ciencias, UAEM.  		Octubre de 2014
+% 
+%	Alumno: 			Emanuel García Pérez
+%	Asginatura:		Procesamiento del Lneguaje Natural
+%	Proyecto:		Exposición - Artículo
+%	Tema:			"Clasificación de polaridad en textos con opiniones
+%					 en español mediante análisis sintáctico de dependencias"
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+
+\documentclass{beamer}
+ 
+%\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{beamerthemeshadow}
+\usepackage{graphicx}
+
+\title{\textbf{Clasificaci\'on de polaridad en textos con opiniones en espa\~nol mediante an\'alisis sint\'actico de dependencias}} 
+\author{Emanuel Garc\'ia P\'erez}
+\date{\today}
+
+\begin{document}
+
+\frame[allowframebreaks]{\titlepage}
+\section[Contenidos]{}
+\frame{
+\transdissolve[duration=0.2]
+\tableofcontents
+} 
+
+\section{INTRODUCCI\'ON}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+\begin{itemize}
+	\item En los \'ultimos a\~nos el alcancen de los blogs, foros y redes sociales han hecho que millones de usuarios los usen para expresar sus opiniones sobre diversos temas.
+	\item Esta gran variedad de opiniones y cr\'iticas que abundan en la web son de gran utilidad para que vendedores y fabricantes conozcan el impacto de sus productos en los consumidores.
+\end{itemize}
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\textwidth]{sentiment1.jpg}
+  \label{fig:ejemplo}
+\end{figure}
+}
+
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{}
+Debido a las ventajas que presenta toda esa informaci\'on y la complejidad que conlleva su an\'alisis es necesario la b\'usqueda de soluciones eficientes capaces de monitorizar este flujo de informaci\'on, lo cual ha contribuido al estudio y desarrollo de la miner\'ia de opiniones(MO). La MO de enfoca en el tratamiento autom\'atico de informaci\'on con opini\'on, lo que permite extraer la polaridad de un texto.
+}
+
+
+\section{ESTADO DEL ARTE}
+\section{CLASIFICACI\'ON DE OPINIONES BASADA EN DEPENDENCIAS}
+\subsection{Propuesta Base}
+\subsection{Tratamiento de la Intensificaci\'on}
+\subsection{Tratamiento de las oraciones adversativas}
+\subsection{Tratamiento de la Negaci\'on}
+\subsubsection{Identificaci\'on del alcance de la negaci\'on}
+\subsubsection{Modificaci\'on de la polaridad}
+\section{RESULTADOS EXPERIMENTALES}
+\subsection{Implementaci\'on}
+\subsection{Evaluaci\'on}
+\section{CONCLUSIONES Y TRABAJO FUTURO}
+
+\section{BIBLIOGRAF\'IA}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Bibliograf\'ia}
+\begin{thebibliography}{99}
+\bibitem{}Desarrollo de un Sistema de Recuperaci\'on de Informaci\'on para Publicaciones
+Cient\'ificas del \'Area de Ciencias de la Computaci\'on. Kuna, H., Rey, M., Martini, E., Solonezen, L., Podkowa. Revista Latinoamericana de Ingenier\'ia de Software 2014.
+\bibitem{}THE AR-INDEX: COMPLEMENTING THE H-INDEX. Bihui Jin. National Library of Science CAS, Beijing, 100080, China. 2005-2007.
+\bibitem{}http://www.core.edu.au/
+\end{thebibliography}
+}
+
+\end{document}
