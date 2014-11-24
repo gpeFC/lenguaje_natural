@@ -66,56 +66,98 @@ Es debido a este tipo de problemas que se pretende obtener resultados m\'as prec
   \label{fig:ejemplo}
 \end{figure}
 }
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Caracter\'isticas t\'ipicas(1)}
+\begin{itemize}
+	\item \textbf{Autonom\'ia}: Trabajar sin supervisi\'on humana, una vez fijadas las condiciones y restricciones necesarias, se espera que el agente intente cumplir sus objetivos.
+	\item \textbf{Inteligencia}: Existen diferentes conceptos que pueden cubrir este rasgo, siendo cualesquiera de ellos el empleado para aseverar que el agente es inteligente.
+	\item \textbf{Cooperaci\'on}: Ser capaz de colaborar con otros agentes, intercambiando informaciones  resultados de acciones propias. La cooperaci\'on requiere que exista alg\'un mecanismo de negociaci\'on entre agentes.
+\end{itemize}
+}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Caracter\'isticas t\'ipicas(2)}
+\begin{itemize}
+	\item \textbf{Comunicaci\'on}: Implica tanto la capacidad de comunicarse con el usuario, as\'i como tambi\'en tener conocimiento sobre el mundo o dominio sobre el cual opera el agente.
+	\item \textbf{Reactividad}: Poder responder ante eventos, tomando sus propias decisiones, inclusive modificando su manera de operar, teniendo en cuenta siempre lograr sus objetivos.
+	\item \textbf{Adaptatividad}: Aprender de experiencias pasadas, o de otros agentes, así como de las reacciones del usuario antes resultados previos. (Aprendizaje autom\'atico)
+\end{itemize}
+}
 
 
 
 \section{AGENTES INTELIGENTES Y RECUPERACI\'ON DE INFORMACI\'ON EN LA WEB}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{}
+\frametitle{Agentes inteligentes y recuperaci\'on de informaci\'on}
+La exploraci\'on autom\'atica de la web puede ser una tarea bien ejecutada por un agente. Esto se puede haciendo que las necesidades informativas requeridas sean parte de las especificaciones iniciales del agente; \'este explorar\'ia la red, eligiendo los enlaces m\'as prometedores, accediendo a nuevas p\'aginas, recopilando aquellas que puedan satisfacer las especificaciones iniciales. Este tipo de enfoque para abordar el problema de la exploraci\'on web tiene ciertas limitaciones, siendo una de estas el tiempo, dado que, a\'un de forma autom\'atica, explorar la web requiere mucho tiempo, por lo cual se espera que el agente entregue buenos resultados en un intervalo de tiempo razonable, definido algunas veces por el usuario. Tambi\'en se restringe la cantidad de resultados recuperados por el agente, compensando esto al incrementar la precisi\'on de los mismos.
 }
 
 
 \subsection{La elecci\'on de los puntos de partida}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{}
+\frametitle{Puntos de partida(1)}
+Dado que el agente explorara una gran cantidad de p\'aginas, es necesario establecer un punto de partida; t\'ipicamente la web se representa como un grafo dirigido, donde las diferentes p\'aginas son los nodos y los enlaces son los arcos del grafo.\\
+La exploraci\'on parte de un nodo, y utilizando los arcos explorar los dem\'as. Previo a esto, es necesario localizar los nodos o puntos de partida que puedan estar lo m\'as cercanos posible a las p\'aginas relevantes para las necesidades de informaci\'on del usuario.
+}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Puntos de partida(2)}
+Un enfoque usado para elegir buenos puntos de partida es comenzar el trabajo del agente con una b\'usqueda cl\'asica en bases de datos de diferentes buscadores convencionales, lo cual implica que dicha b\'usqueda sea enviada a metabuscadores. Por tanto, inicialmente el agente enviar\'a la consulta al metabuscador, recogiendo las p\'aginas que le sean devueltas, tales p\'aginas son las candidatas a ser puntos de inicio de la exploraci\'on. Estos puntos se pueden manejar secuencialmente, empezando la exploraci\'on en cada uno o bien en paralelo, utilizando varios agentes para ello. En este \'ultimo caso, los agentes deben hacer uso de la cooperaci\'on tanto para compartir criterios de selecci\'on de p\'aginas como para evitar exploraciones en los mismos nodos.
+}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Puntos de partida(3)}
+Explorar con varios agentes diferentes puntos de partida tiene la ventaja de permitir utilizar procesamiento paralelo, adem\'as de obviar en cierta medida problemas de comunicaciones, como cuellos de botella, servidores lentos, etc., conllevando a una mejora en el tiempo de respuesta.\\
+Tambi\'en se debe considerar que, al tener varios puntos de inicio para explorar, podemos previamente priorizar una parte de ellos, esto puede ser de varias maneras, eligiendo los \textbf{n} primeros, aplicar medidas de similitud entre las especificaciones del usuario y el contenido de las p\'aginas, o bien dejando que el usuario seleccione aquellos que considere como mejores puntos de partida.
 }
 
 
 \subsection{Activaci\'on de enlaces}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{}
+\frametitle{Activaci\'on de enlaces}
+Dado un punto de partida, el agente debe extraer los enlaces que ese punto contenga y guardarlos en una lista, posteriormente ir\'a tomando enlaces de la lista, recuperando las p\'aginas a las que apuntan y as\'i sucesivamente. Si la exploraci\'on se realiza entre varis agentes, la lista debe ser compartida de alguna forma para evitar duplicar exploraciones. El almacenamiento y seguimiento de todos los enlaces llevar\'ia, te\'oricamente, a la exploraci\'on de la web. Debido a las limitaciones de recursos, capacidad de procesamiento y tiempo, es necesario establecer un orden de prioridad para los enlaces a explorar, atendiendo a dos premisas fundamentales: la relevancia del enlace respecto a la necesidad del usuario, y las posiblidades de acceder a mayores espacios de exploraci\'on en ciertos enlaces respecto a otros.
+}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{Selecci\'on de enlaces prometedores}
+Para determinar la importancia de una p\'agina, una posibilidad consiste en utilizar los \textit{blacklinks} de la misma, esto es, las p\'aginas que tienen enlaces hacia la p\'agina en cuesti\'on. La forma m\'as simple es contar el n\'umero de \textit{blacklinks}, pero el problema es disponer de dicha informaci\'on. Un m\'etodo m\'as sofisticado que este conteo de \textit{blacklinks} es el algoritmo \textbf{PageRank}, cuya idea b\'asica es que la importancia de una p\'agina es directamente proporcional al n\'umero de \textit{blacklinks} que \'esta tiene, pero no todos los \textit{blacklinks} pesan lo mismo, sino que su valor est\'a en funci\'on de la importancia de la p\'agina que proceda, y \'esta p\'agina a su vez esta valorada de igual forma.
+}
+\frame{
+\transdissolve[duration=0.2]
+\frametitle{PageRank}
+Seg\'un este algoritmo, el c\'alculo del \textbf{PageRank} se debe hacer de forma iterativa, asignando de antemano pesos determinados a los nodos, ya sea de manera aleatoria o en funci\'on de alg\'un otro criterio. Este m\'etodo a pesar de sus ventajas, implica un c\'alculo costoso en t\'erminos de tiempo de proceso, un problema que tambi\'en est\'a presente al calcular otros tipos de coeficientes requeridos para estimar la importancia de unos nodos frente a otros.
 }
 
 
 \subsection{Selecci\'on de p\'aginas por contenido}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{}
+\frametitle{Selecci\'on de p\'aginas por contenido}
+M\'as all\'a de la importancia de una p\'agina, es de mayor relevancia disponer de medios para estimar la proximidad de un nodo a las necesidades del usuario, permitiendo esto seleccionar p\'aginas para que el agente las entregue al usuario. Pero adem\'as de la importancia, determinar cuales enlaces son m\'as prometedores para seguir la exploraci\'on.
 }
 
 \subsubsection{T\'ecnicas de recuperaci\'on de informaci\'on}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{}
+\frametitle{T\'ecnicas de recuperaci\'on de informaci\'on}
+Al considerar cada p\'agina web como un documento en si, podemos aplicar t\'ecnicas habituales en recuperaci\'on informaci\'on para estimar la semejanza entre una p\'agina explorada y las necesidades del usuario, comparando a trav\'es de estas t\'ecnicas el texto de la p\'agina web. Uno de los procedimientos m\'as conocidos es el modelo vectorial, el cual opera con palabras o t\'erminos y calcula para cada uno de \'estos un peso que trata de expresar la importancia de la palabra en cuesti\'on. Este c\'alculo se basa en la estimaci\'on de la frecuencia de aparici\'on de las palabras en el documento ponderandolo respecto a la frecuencia de aparici\'on de las palabras en toda la colecci\'on de documentos. Debido a que en la exploraci\'on directa de la web se desconoce el segundo factor, se pondera la estimaci\'on de las palabras \'unicamente en virtud de su frecuencia dentro de la p\'agina donde ocurre.
 }
 
 \subsubsection{Estudio de enlaces}
 \frame{
 \transdissolve[duration=0.2]
-\frametitle{}
+\frametitle{Estudio de enlaces}
+La similitud documental se puede abordar desde el punto de vista de los enlaces, obviando el contenido de las p\'aginas a las que apuntan, adem\'as la recuperaci\'on basada en exclusivamente los enlaces de las p\'aginas web parece tener una efectividad a tener en cuenta; la similitud dependiente de los enlaces se define como:\\
+$$
+\sin_{y}^{link} = \frac{link_{ij}}{\sum_{i=1}^n{link}_{ij}}
+$$
+\\
+$link_{ij}$: n\'umero de enlaces desde $D_i$ a $D_j$ en una colecci\'on de $N$ documentos de la web.
 }
-
-
-
-\section{CONCLUSIONES}
-\frame{
-\transdissolve[duration=0.2]
-\frametitle{}
-}
-
 
 
 \end{document}
